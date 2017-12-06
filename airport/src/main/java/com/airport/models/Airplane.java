@@ -15,7 +15,6 @@ public class Airplane {
     private String name;
 
     @NotNull
-    @OneToOne
     private PlaneType planeType;
 
     @NotNull
@@ -23,8 +22,6 @@ public class Airplane {
     private int fuelCapacity = 5000;
 
     public Airplane() {}
-
-
 
     public Airplane(long id, String name) {
         this.id = id;

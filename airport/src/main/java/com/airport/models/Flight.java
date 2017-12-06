@@ -14,8 +14,9 @@ public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     @NotNull
-    @OneToOne
+    @ManyToOne
     private Airplane airplane;
 
     @NotNull
@@ -31,8 +32,6 @@ public class Flight {
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate endDate;
-
-
 
     public Flight() {}
 
