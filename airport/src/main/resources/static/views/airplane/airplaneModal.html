@@ -1,0 +1,24 @@
+<div class="container">
+    <row>
+        <h1>Add Airplane</h1>
+    </row>
+    <br>
+    <form class="formcenter" data-toggle="validator" role="form" id="form">
+        <div class="row form-group">
+            <div class="col-25">
+                <div class="control-label" id="airplaneId"></div>
+
+            </div>
+        </div>
+        <div class="row form-group">
+            <input id="submitButton" type="submit" value="Add Airplane">
+        </div>
+
+    </form>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#form").validator();
+    });
+</script>
