@@ -63,7 +63,7 @@ public class FlightControllerTests {
                 .andDo(print())
                 .andExpect(jsonPath("$.id", is((int) newFlight.getId())))
                 .andExpect(jsonPath("$.title", is(newFlight.getTitle())))
-                .andExpect(jsonPath("$.author", is(newFlight.getAirplane())))
+                .andExpect(jsonPath("$.airplane", is(newFlight.getAirplane())))
                 .andExpect(status().isOk());
     }
 
