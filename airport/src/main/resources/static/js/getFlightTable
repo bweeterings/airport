@@ -1,8 +1,20 @@
+$(document).ready(function(){
+    getFlights();
+    // when the submit button is pressed, retrieve all values from the form
+    $('#flightTable').on( 'click', 'tbody tr', function (evt) {
+        var cell=(evt.target).closest('td');
+
+        if($(cell).index() > 0){
+            getObjectAndSetInputFields(this);
+        }
+    });
+});
+
 function getFlightData() {
     console.log("getting data...");
 
     $.ajax({
-        url: "http://localhost:8080/api/flights/all",
+        url: "http://localhost:8080/api/flight/all",
         type: "get",
         success: function(flights) {
 
