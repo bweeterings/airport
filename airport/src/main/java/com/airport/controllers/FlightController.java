@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/flights/")
 public class FlightController {
 
+    /**
+     * connect to repository
+     */
     @Autowired
     private FlightRepository flightRepository;
 
     /**
-     * post a new object
+     * post a new flight
      * @param flight
      */
     @CrossOrigin
@@ -24,7 +27,7 @@ public class FlightController {
     public Flight addFlight(@RequestBody Flight flight){ return flightRepository.save(flight); }
 
     /**
-     * get all objects
+     * get all flights
      * @return
      */
     @RequestMapping(value = "all", method = RequestMethod.GET)
@@ -33,7 +36,7 @@ public class FlightController {
     }
 
     /**
-     * find one object
+     * find one flight
      * @param id
      * @return
      */
@@ -43,7 +46,7 @@ public class FlightController {
     }
 
     /**
-     * edit one object
+     * edit one flight
      * @param flight
      */
     @RequestMapping(value = "update", method = RequestMethod.PUT)
@@ -57,7 +60,7 @@ public class FlightController {
     }
 
     /**
-     * delete object
+     * delete one flight
      * @param flight
      */
     @RequestMapping(value = "delete", method = RequestMethod.DELETE)

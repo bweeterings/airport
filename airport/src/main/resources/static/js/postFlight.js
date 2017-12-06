@@ -1,8 +1,10 @@
+// unfinished function
+
 function postNewFlight(){
 
 
 
-   var validJsonBook = JSON.stringify(newMovie);
+   var validJsonBook = JSON.stringify(newFlight);
    console.log(validJsonBook);
 
    $.ajax({
