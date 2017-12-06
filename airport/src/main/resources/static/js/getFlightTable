@@ -1,4 +1,3 @@
-
 function getFlightData() {
     console.log("getting data...");
 
