@@ -1,8 +1,4 @@
-<script src="js/overview.js"></script>
-
-<button class="btn btn-default" onclick="addAirplane()">New</button>
-<button class="btn btn-default" onclick="updateAirplane()">Edit</button>
-<button class="btn btn-default" onclick="deleteAirplane()">Delete</button>
+<button data-toggle="modal" class="btn btn-default" data-target="#airplaneModal">Add</button>
 
 <h1>Airplane overview</h1>
 
@@ -10,9 +6,10 @@
     <thead>
     <tr>
         <th>Airplane Id</th>
-        <th>...</th>
-        <th>...</th>
-        <th>...</th>
+        <th>Name</th>
+        <th>Plane type</th>
+        <th>Current fuel</th>
+        <th>Fuel capacity</th>
     </tr>
     </thead>
     <tbody id="overviewBody">

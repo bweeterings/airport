@@ -1,5 +1,6 @@
 package com.airport.repositories;
 
+import com.airport.models.Airplane;
 import com.airport.models.Flight;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -9,5 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface FlightRepository extends CrudRepository<Flight, Long> {
+    public Flight findOneByAirplane(Airplane airplane);
 }
 

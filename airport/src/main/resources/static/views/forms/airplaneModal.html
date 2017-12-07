@@ -1,24 +1,28 @@
 <div class="container">
-    <row>
-        <h1>Add Airplane</h1>
-    </row>
-    <br>
-    <form class="formcenter" data-toggle="validator" role="form" id="form">
+    <h1>Add Airplane</h1>
+    <form data-toggle="validator" role="form" id="addPlaneForm">
         <div class="row form-group">
-            <div class="col-25">
-                <div class="control-label" id="airplaneId"></div>
-
-            </div>
+            <label for="planeName">Plane name</label>
+            <input type="text" class="form-control" id="planeName" name="planeName" placeholder="Plane name" required>
         </div>
         <div class="row form-group">
-            <input id="submitButton" type="submit" value="Add Airplane">
+            <label for="planeType">Plane Type</label>
+            <input type="number" class="form-control" id="gasLevel" name="planeType" placeholder="Plane type" required>
         </div>
-
+        <div class="row form-group">
+            <label for="currentFuel">Current fuel</label>
+            <input type="number" class="form-control" id="currentFuel" name="roomNumber" placeholder="Current fuel" required>
+        </div>
+        <div class="row form-group">
+            <label for="currentFuel">Fuel Capacity</label>
+            <input type="number" class="form-control" id="fuelCapacity" name="roomNumber" placeholder="fuelCapacity" required>
+        </div>
+        <div class="row form-group">
+            <input id="submitButton" class="btn btn-default" type="submit" value="Add Plane">
+        </div>
     </form>
 </div>
 
-<script>
-    $(document).ready(function(){
-        $("#form").validator();
-    });
-</script>
+<!--Import the corresponding js-->
+<script src="js/validator.js"></script>
+<script src="js/addPlane.js"></script>
