@@ -2,6 +2,7 @@ package com.airport.controllers;
 
 import com.airport.models.Airplane;
 import com.airport.repositories.AirplaneRepository;
+import com.airport.repositories.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,9 @@ public class AirplaneController {
      */
     @Autowired
     private AirplaneRepository airplaneRepository;
+
+    @Autowired
+    private FlightRepository flightRepository;
 
     /**
      * post a new airplane

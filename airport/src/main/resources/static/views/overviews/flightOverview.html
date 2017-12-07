@@ -1,6 +1,6 @@
-<script src="js/getFlightTable.js"></script>
 
-<button class="btn btn-default" onclick="addFlight()">New</button>
+<button data-toggle="modal" class="btn btn-primary" data-target="#flightModal">Add</button>
+
 <button class="btn btn-default" onclick="updateFlight()">Edit</button>
 <button class="btn btn-default" onclick="deleteFlight()">Delete</button>
 
@@ -24,9 +24,11 @@
         <div class="modal-content" id="flightModalContainer">
             <script>
             $(document).ready(function(){
-                loadModal("views/flightModal.html", "#flightModalContainer");
+                loadModal("views/forms/flightModal.html", "#flightModalContainer");
             });
             </script>
         </div>
     </div>
 </div>
+
+<script src="js/getFlight.js"></script>

@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * 404 exception
+ * 403 exception
  */
-@ResponseStatus(value= HttpStatus.NOT_FOUND, reason="No result")
-public class NotFoundException extends RuntimeException{
+@ResponseStatus(value= HttpStatus.FORBIDDEN, reason="Not enough fuel")
+public class NotEnoughFuelException extends RuntimeException{
 }

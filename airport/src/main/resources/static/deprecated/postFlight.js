@@ -5,7 +5,7 @@ function postNewFlight(){
 
 
    var validJsonBook = JSON.stringify(newFlight);
-   console.log(validJsonBook);
+   console.log(postNewFlight);
 
    $.ajax({
        url:"http://localhost8080/api/flight/add",

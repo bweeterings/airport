@@ -11,97 +11,62 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Import Bootstrap js after Jquery -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
 	<!-- Datatables -->
-	<Link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	<Link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.3/css/select.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<!-- bootstrap js -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/select/1.2.3/js/dataTables.select.min.js"></script>
 	<!-- Import change content js -->
 	<script src="js/changeContent.js"></script>
 	<!-- Import css -->
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 	<link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-	<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 </head>
-
 <body>
 <div id="header" class="container">
 	<div id="logo">
-		<h1><a href="#">Many to One Flights</a></h1>
+		<h1><a href="#" onclick="changeContent('views/tiles.html')">Many to One Flights</a></h1>
 	</div>
 	<div id="menu">
 		<ul>
-			<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-			<li><a href="#" accesskey="3" title="">Travel </a></li>
+			<li class="active"><a href="#" accesskey="1" title="" onclick="changeContent('views/tiles.html')">Home</a></li>
+			<li><a href="#" accesskey="3" title="" onclick="changeContent('views/overviews/flightOverview.html')">Flights</a></li>
+			<li><a href="#" accesskey="3" title="" onclick="changeContent('views/overviews/airplaneOverview.html')">Airplanes</a></li>
 			<li><a href="#" accesskey="3" title="">About</a></li>
 			<li><a href="#" accesskey="5" title="">Contact</a></li>
 		</ul>
 	</div>
 </div>
+<!--
 <div id="page">
 	<div class="container">
 		<div class="title">
-			<h2>Nulla luctus eleifend purus</h2>
-			<p>Hi! Welcome to the webflight application. Your custom text can go here. Have fun :) </p>
+			<h2>Demo application simulating an airport</h2>
+			<p>Hi! Welcome to the webflight application. Your custom text can go here. Have fun :)</p>
 		</div>
 		<div class="boxA">
 			<div class="box margin-btm">
-				<img src="img/pic01.jpg" width="320" height="180" alt="" />
+				<img src="img/tile01.jpg" width="320" height="180" alt="" />
 				<div class="details">
-					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+					<p>See an overview and book a new flight here.</p>
 				</div>
-				<a href="#" class="button" onclick="changeContent('views/flight/flightOverview.html')">More Details</a>
+				<a href="#" class="button" onclick="changeContent('views/overviews/flightOverview.html')">More Details</a>
 			</div>
-
-			<!-- Tiles for future expansion
-			<div class="box">
-				<img src="img/pic02.jpg" width="320" height="220" alt="" />
-				<div class="details">
-					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
-				</div>
-				<a href="#" class="button">More Details</a>
-			</div>
-			-->
-
 		</div>
 		<div class="boxB">
 			<div class="box">
-				<img src="img/pic03.jpg" width="320" height="280" alt="" />
+				<img src="img/tile02.jpg" width="320" height="280" alt="" />
 				<div class="details">
-					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+					<p>See an overview and manage your airplanes here.</p>
 				</div>
-				<a href="#" class="button" onclick="changeContent('views/airplane/airplaneOverview.html')">More Details</a>
-			</div>
-
-			<!--
-			<div class="box">
-				<img src="img/pic05.jpg" width="320" height="140" alt="" />
-				<div class="details">
-					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
-				</div>
-				<a href="#" class="button">More Details</a>
+				<a href="#" class="button" onclick="changeContent('views/overviews/airplaneOverview.html')">More details</a>
 			</div>
 		</div>
-		<div class="boxC">
-			<div class="box">
-				<img src="img/pic04.jpg" width="320" height="200" alt="" />
-				<div class="details">
-					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
-				</div>
-				<a href="#" class="button">More Details</a>
-			</div>
-			<div class="box">
-				<img src="img/pic06.jpg" width="320" height="200" alt="" />
-				<div class="details">
-					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
-				</div>
-				<a href="#" class="button">More Details</a>
-			</div>
-			-->
-		</div>
-
 	</div>
+	-->
+<div class="container-fluid" id="page"></div>
 </div>
 <div id="copyright" class="container">
 	<p>&copy; SE Track 2017 | Demo Application.</p>

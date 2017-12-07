@@ -1,17 +1,33 @@
-function getData() {
-
-    console.log("Getting data...");
+function getFlightData(){
 
     $.ajax({
-
-        url:"http://localhost8080/api/flight/all",
+        url: "http://localhost:8080/api/flights/all",
         type:"get",
+        success: function(response){
 
-        success: function(flights){
-
-            $.each(movies, function(index, flight){
-                $('#data').append(value.id + " " + "..." + " " + "<br>");
-            });
+           $("#flightTable").DataTable().clear();
+           $("#flightTable").DataTable().rows.add(response);
+           $("#flightTable").DataTable().columns.adjust().draw();
         }
     });
 }
+
+$(document).ready(function(){
+    $('#flightTable').DataTable({
+        select:{
+            style: 'os',
+            selector: 'td:first-child'
+        },
+        order:[[1,'asc']],
+        columns: [
+
+            {"defaultContent": "" },
+            {"data": "id"},
+            {"data": "airplane"},
+            {"data": "origin"}
+            {"data": "destination"}
+            {"data": "fuelCost"}
+        ],
+    });
+    getFlightData();
+});

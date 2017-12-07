@@ -7,7 +7,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+/**
+ * pojo class for Flight
+ */
 @Entity
 public class Flight {
 
@@ -24,25 +28,25 @@ public class Flight {
     @NotNull
     private Destination destination;
 
-    private int fuelCost = 2000;
+    private int fuelCost = 2000; // To do: add function to subtract fuelCost from airplane currentFuel
 
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate startDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/mm/yyyy HH:mm:ss")
+    private LocalDateTime startDate;
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate endDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/mm/yyyy HH:mm:ss")
+    private LocalDateTime endDate;
 
     public Flight() {}
 
-    public Flight(long id, Airplane airplane, Origin origin, Destination destination, LocalDate startDate, LocalDate endDate, int fuelCost) {
+    public Flight(long id, Airplane airplane, Origin origin, Destination destination, int fuelCost, LocalDateTime startDate, LocalDateTime endDate) {
         this.id = id;
         this.airplane = airplane;
         this.origin = origin;
         this.destination = destination;
+        this.fuelCost = fuelCost;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.fuelCost = fuelCost;
     }
 
     public long getId() {
@@ -77,27 +81,27 @@ public class Flight {
         this.destination = destination;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
     public int getFuelCost() {
         return fuelCost;
     }
 
     public void setFuelCost(int fuelCost) {
         this.fuelCost = fuelCost;
+    }
+
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDateTime endDate) {
+        this.endDate = endDate;
     }
 }
